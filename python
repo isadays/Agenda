@@ -1,0 +1,6 @@
+BEGIN;
+--
+-- Rename table for event to (default)
+--
+ALTER TABLE "event" RENAME TO "core_event";
+COMMIT;
