@@ -1,0 +1,8 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+    <h2>Schedules  </h2>
+    {% for event in Events %}
+    <b> Event :</b> {{ event.title }} |<b>   Date: </b> {{ event.get_date_event }} |<b>  User</b> : {{ event.users }} </b> <p> </p>
+    {% endfor %}
+{% endblock %}
