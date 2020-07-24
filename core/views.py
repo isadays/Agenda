@@ -36,3 +36,21 @@ def list_events(request):
     event = Event.objects.filter(users=user_filter)
     data = {'Events': event}
     return render(request, 'schedule.html', data)
+
+
+@login_required(login_url='/login/')
+def event(request):
+    return render(request, 'event.html')
+@login_required(login_url='/login/')
+def submit_event(request):
+    if request.POST:
+        title = request.POST.get('title')
+        date_event = request.POST.get('date_event')
+        description = request.POST.get('description')
+        user = request.user
+        Event.objects.create(title= title, date_event= date_event,description=description,users= user)
+
+        return redirect('/')
+
+
+
