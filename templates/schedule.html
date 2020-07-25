@@ -5,6 +5,12 @@
     <a href="event/">
         <button type="button"> New Event.</button></a> <br>
     {% for event in Events %}
-    <b> Event :</b> {{ event.title }} |<b>   Date: </b> {{ event.get_date_event }} |<b>  User</b> : {{ event.users }} </b> <p> </p>
+    <b> Event :</b> {{ event.title }} |<b>
+    Date: </b> {{ event.get_date_event }} |<b>
+    User</b> : {{ event.users }}
+    (<a href="event/?id={{ event.id }}" >Edit</a> /
+    <a href="event/delete/{{ event.id }}"> Delete</a>)
+
+</b> <p> </p>
     {% endfor %}
 {% endblock %}

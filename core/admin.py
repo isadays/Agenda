@@ -4,8 +4,8 @@ from core.models import Event
 
 # Register your models here.
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('title', 'date_event', 'date_create')
-    list_filter = ('users','date_event',)
+    list_display = ('id','title', 'date_event', 'date_create')
+    list_filter = ('users','date_event','id',)
 
 
 admin.site.register(Event, EventAdmin)

@@ -16,5 +16,11 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
+
     def get_date_event(self):
         return self.date_event.strftime('%m/%d/%Y , %H:%M')
+
+
+    def get_date_input_event(self):
+        return self.date_event.strftime('%Y-%m-%dT%H:%M')
